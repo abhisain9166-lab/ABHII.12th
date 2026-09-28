@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ABHII.12TH - RBSE Class 12 study material, PYQs, practice papers, MCQs and doubt corner.">
+<title>ABHII.12TH | RBSE Class 12</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span>ABHII</span><b>.12TH</b></div>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+  <nav id="nav">
+    <a href="#home">Home</a><a href="#subjects">Subjects</a><a href="#practice">Practice</a>
+    <a href="#papers">Papers</a><a href="#doubt">Doubt Corner</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="tag">RBSE CLASS 12 • 2026–27</p>
+    <h1>Study smart.<br><span>Score better.</span></h1>
+    <p class="lead">Notes, topic-wise questions, MCQs, PYQs, sample papers and practice sets — all in one place for Class 12 RBSE students.</p>
+    <div class="hero-buttons">
+      <a class="btn primary" href="#subjects">Start Studying →</a>
+      <a class="btn secondary" href="#practice">Practice Now</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="mini-logo">A</div>
+    <h3>Your Class 12 Study Hub</h3>
+    <div class="stats"><div><strong>5+</strong><small>Subjects</small></div><div><strong>∞</strong><small>Practice</small></div><div><strong>24×7</strong><small>Revision</small></div></div>
+  </div>
+</section>
+
+<section class="section" id="subjects">
+  <div class="section-head"><div><p class="eyebrow">EXPLORE</p><h2>Choose your subject</h2></div><input id="subjectSearch" oninput="filterSubjects()" placeholder="Search subject..."></div>
+  <div class="cards" id="subjectCards">
+    <article class="card subject" data-name="Physics"><div class="icon">⚡</div><h3>Physics</h3><p>Concepts • Formulae • PYQs • Numericals</p><button onclick="openSubject('Physics')">Open Subject</button></article>
+    <article class="card subject" data-name="Chemistry"><div class="icon">🧪</div><h3>Chemistry</h3><p>Reactions • Notes • MCQs • PYQs</p><button onclick="openSubject('Chemistry')">Open Subject</button></article>
+    <article class="card subject" data-name="Mathematics"><div class="icon">∑</div><h3>Mathematics</h3><p>Formulae • Examples • Topic Practice</p><button onclick="openSubject('Mathematics')">Open Subject</button></article>
+    <article class="card subject" data-name="English"><div class="icon">A</div><h3>English</h3><p>Flamingo • Vistas • Grammar • Writing</p><button onclick="openSubject('English')">Open Subject</button></article>
+    <article class="card subject" data-name="Hindi"><div class="icon">अ</div><h3>Hindi</h3><p>Literature • Grammar • Writing Practice</p><button onclick="openSubject('Hindi')">Open Subject</button></article>
+    <article class="card subject" data-name="Biology"><div class="icon">🧬</div><h3>Biology</h3><p>Diagrams • Concepts • MCQs • PYQs</p><button onclick="openSubject('Biology')">Open Subject</button></article>
+  </div>
+</section>
+
+<section class="section soft" id="practice">
+  <div class="section-head"><div><p class="eyebrow">PRACTICE ZONE</p><h2>Practice by topic</h2></div></div>
+  <div class="practice-grid">
+    <div class="practice-box"><span>01</span><h3>Topic-wise Questions</h3><p>Pick a chapter and practise questions from easy to board level.</p><button onclick="showToast('Topic-wise question bank coming next!')">Explore</button></div>
+    <div class="practice-box"><span>02</span><h3>MCQ Challenge</h3><p>Quick objective practice with instant answer feedback.</p><button onclick="startQuiz()">Start MCQ</button></div>
+    <div class="practice-box"><span>03</span><h3>Numerical Practice</h3><p>Physics, Chemistry and Maths calculation practice.</p><button onclick="showToast('Numerical practice section selected!')">Practice</button></div>
+    <div class="practice-box"><span>04</span><h3>Revision Sets</h3><p>Short revision tests for last-minute preparation.</p><button onclick="showToast('Revision sets selected!')">Revise</button></div>
+  </div>
+</section>
+
+<section class="section" id="papers">
+  <div class="section-head"><div><p class="eyebrow">EXAM ROOM</p><h2>PYQs & sample papers</h2></div></div>
+  <div class="paper-list">
+    <div class="paper"><div><span class="pill">PYQ</span><h3>RBSE Previous Year Questions</h3><p>Subject-wise and chapter-wise collection.</p></div><button onclick="showToast('Add verified PDF papers here.')">View</button></div>
+    <div class="paper"><div><span class="pill blue">SAMPLE</span><h3>Board-style Sample Papers</h3><p>Full-length papers with exam-style sections.</p></div><button onclick="showToast('Sample paper library ready for PDFs.')">View</button></div>
+    <div class="paper"><div><span class="pill green">PRACTICE</span><h3>Practice Paper Series</h3><p>Easy, standard and challenging practice sets.</p></div><button onclick="showToast('Practice paper library ready for PDFs.')">View</button></div>
+  </div>
+</section>
+
+<section class="section doubt" id="doubt">
+  <div class="doubt-card">
+    <div><p class="eyebrow">STUCK SOMEWHERE?</p><h2>Ask in the Doubt Corner 💡</h2>
+    <p>Paste your question below. The production version can connect this form to a real doubt database or teacher/mentor system.</p>
+    <textarea id="doubtText" placeholder="Type your doubt here..."></textarea>
+    <div class="form-row"><select id="doubtSubject"><option>Physics</option><option>Chemistry</option><option>Mathematics</option><option>English</option><option>Hindi</option><option>Biology</option></select><button class="btn primary" onclick="submitDoubt()">Submit Doubt</button></div>
+    </div>
+</section>
+</main>
+
+<footer><div class="brand">ABHII<b>.12TH</b></div><p>Made for Class 12 RBSE students • Study • Practice • Improve</p><small>Content should be checked against the latest official RBSE syllabus before publishing.</small></footer>
+
+<div id="modal" class="modal" onclick="closeModal(event)"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
